@@ -121,3 +121,7 @@ Feel free to fork and improve this API. PRs are welcome!
 S. Durganandhu
 BTech ECE | Aspiring Java Backend Developer
 Made with 💙 and caffeine ☕
+
+
+📜 License
+This project is licensed under the MIT License.
