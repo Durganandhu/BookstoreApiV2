@@ -1,130 +1,121 @@
-# 📚 Bookstore API V2
+# RESTful Bookstore API 📚
 
-A RESTful Bookstore API built using Spring Boot (Java) to manage books. This project supports basic CRUD operations and is designed for beginner-level API learning and practice.
-
----
-
-## 📁 Project Structure
-
-
-BookstoreApiV2/
-├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── com/bookstore/api/
-│ │ │ ├── controller/
-│ │ │ │ └── BookController.java
-│ │ │ ├── model/
-│ │ │ │ └── Book.java
-│ │ │ ├── repository/
-│ │ │ │ └── BookRepository.java
-│ │ │ └── BookstoreApiV2Application.java
-│ │ └── resources/
-│ │ └── application.properties
-├── pom.xml
-└── README.md ✅
-
+This project is a Spring Boot-based RESTful API for managing a bookstore. It allows users to add, retrieve, update, and delete books from a virtual library.
 
 ---
 
-## 🚀 How to Run the Project
+## 🚀 Features
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/BookstoreApiV2.git
-cd BookstoreApiV2
+- Add new books with title, author, and price
+- Get all books or a specific book by ID
+- Update book details
+- Delete books
+- In-memory data using H2 (can be extended to MySQL/PostgreSQL)
+- Postman collection included for testing
 
-2. Open in VS Code (or IntelliJ)
-Make sure your environment has:
+---
 
-Java 17+
+## 🛠️ Tech Stack
 
-Maven
+- Java 17
+- Spring Boot
+- Spring Web (REST APIs)
+- Spring Data JPA
+- H2 Database (In-memory)
+- Postman (for testing)
+- Git & GitHub (for version control)
 
-Spring Boot support
+---
+
+## 📂 Project Structure
+
+src/
+├── main/
+│ ├── java/com/example/bookstore/
+│ │ ├── controller/
+│ │ ├── model/
+│ │ ├── repository/
+│ │ └── BookstoreApplication.java
+│ └── resources/
+│ ├── application.properties
+│ └── data.sql (optional for preloading books)
+└── test/
 
 
-3. Run the Application
-In VS Code Terminal:
+---
+
+## 📦 API Endpoints
+
+| Method | Endpoint       | Description            |
+|--------|----------------|------------------------|
+| GET    | `/books`       | Get all books          |
+| GET    | `/books/{id}`  | Get a book by ID       |
+| POST   | `/books`       | Add a new book         |
+| PUT    | `/books/{id}`  | Update a book          |
+| DELETE | `/books/{id}`  | Delete a book          |
+
+---
+
+## 🧪 How to Test with Postman
+
+1. **Start the Spring Boot app**  
+   Run `BookstoreApplication.java`
+
+2. **Open Postman**  
+   Send a POST request to:
+http://localhost:8080/books
+
+
+Use this JSON in body (raw → JSON):
+```json
+{
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "price": 450.0
+}
+Try other endpoints similarly (GET, PUT, DELETE)
+
+🗃️ Postman Collection
+The postman/ folder includes:
+
+Bookstore-Collection.json — import this into Postman
+
+
+
+💾 How to Run
+Clone the repo:
+
+git clone https://github.com/your-username/RESTful-Bookstore-API.git
+cd RESTful-Bookstore-API
+Run the project:
+
+In VS Code or IntelliJ: Run BookstoreApplication.java
+
+Or with terminal:
+
 ./mvnw spring-boot:run
 
-Or just run BookstoreApiV2Application.java as a Java application.
-
-Spring Boot will start the server at:
-
-http://localhost:8080
 
 
-Using Postman to Test API
-Add a Book
-Method: POST
-URL: http://localhost:8080/books
-Body → raw → JSON
-{
-  "title": "Atomic Habits",
-  "author": "James Clear",
-  "price": 450.0
-}
-Click "Send" → You should see a response like:
+☁️ Future Enhancements
+Connect to MySQL
 
-{
-  "id": 1,
-  "title": "Atomic Habits",
-  "author": "James Clear",
-  "price": 450.0
-}
+Add Swagger documentation
+
+Add user authentication (JWT)
+
+Book search/filter/pagination
 
 
 
 
-View All Books
-Method: GET
-URL: http://localhost:8080/books
-
-View Book by ID
-Method: GET
-URL: http://localhost:8080/books/1
-
-Delete a Book
-Method: DELETE
-URL: http://localhost:8080/books/1
-
-💾 Exporting & Saving Postman Collection
-Open Postman.
-
-Click on your collection → ... → Export → Collection v2.1
-
-Save the .json file as:
-
-BookstoreApiV2.postman_collection.json
-Paste this file inside your project folder.
-
-🧠 GitHub - Push Code to Repository
-1. Create Repository on GitHub
-Name: BookstoreApiV2
-
-Keep it empty (no README)
-
-2. Push Project from VS Code
-git init
-git add .
-git commit -m "Initial commit - Bookstore API v2"
-git branch -M main
-git remote add origin https://github.com/your-username/BookstoreApiV2.git
-git push -u origin main
-(Replace your-username with your GitHub username)
+🤝 Contributing
+Feel free to fork and improve this API. PRs are welcome!
 
 
-👩‍💻 Author
+
+🧑‍💻 Author
 S. Durganandhu
-
-
-
-
-
-
-
-
-
-
+BTech ECE | Aspiring Java Backend Developer
+Made with 💙 and caffeine ☕
 
